@@ -1,0 +1,57 @@
+import java.awt.EventQueue;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.border.EmptyBorder;
+
+public class window_number extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void jumpScreen4() {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					window_number frame = new window_number();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public window_number() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1300, 800);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		ImageIcon image01=new ImageIcon("Image/Group 55.png");
+		
+		contentPane.setLayout(null);
+		
+		
+		JScrollPane scrollPane = new JScrollPane();
+		
+		scrollPane.setBounds(0, -200, 1500,1000 );
+		scrollPane.setLayout(null);
+		JLabel lblNewLabel = new JLabel(image01);
+		lblNewLabel.setBounds(-100,0,1500,1030);
+		scrollPane.add(lblNewLabel);
+		
+		contentPane.add(scrollPane);
+	}
+
+}
