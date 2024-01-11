@@ -1,0 +1,78 @@
+import java.awt.EventQueue;
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JScrollPane;
+import javax.swing.JLabel;
+import java.awt.Label;
+import java.awt.Rectangle;
+import java.io.File;
+
+import javax.swing.Icon;
+import javax.swing.JLayeredPane;
+import java.awt.Color;
+import javax.swing.JTable;
+import javax.swing.ScrollPaneConstants;
+
+import java.awt.BorderLayout;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import javax.swing.JScrollBar;
+
+public class window_frontpage extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	/**
+	 * @wbp.nonvisual location=181,1075
+	 */
+	
+
+	/**
+	 * Launch the application.
+	 */
+	public static void jumpScreen1() {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					window_frontpage frame = new window_frontpage();
+//					frame.setSize(1500,2000);
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public window_frontpage() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0,0, 1020, 1030);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		setContentPane(contentPane);
+		
+		contentPane.setLayout(null);
+		
+		ImageIcon image01=new ImageIcon("Image/軟體工程01.png");
+		
+		JScrollPane scrollPane = new JScrollPane();
+		
+		scrollPane.setBounds(0, 0, 1185, 2500);
+		scrollPane.setLayout(null);
+		JLabel lblNewLabel = new JLabel(image01);
+		lblNewLabel.setBounds(0,0,1020,1030);
+		scrollPane.add(lblNewLabel);
+		
+		contentPane.add(scrollPane);
+				
+	}
+}
