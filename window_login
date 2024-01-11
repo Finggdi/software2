@@ -1,0 +1,169 @@
+import java.awt.EventQueue;
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.util.*;
+import java.awt.BorderLayout;
+import java.awt.Button;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import javax.swing.JTextArea;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import java.awt.Component;
+import javax.swing.Box;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.JPasswordField;
+import javax.swing.UIManager;
+import java.awt.SystemColor;
+import javax.swing.JTabbedPane;
+import javax.swing.JLayeredPane;
+import javax.swing.JInternalFrame;
+import javax.swing.JDesktopPane;
+
+public class window_login extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JPasswordField passwordField;
+	private JPasswordField passwordField_1;
+	private JTextField JTextField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					window_login frame = new window_login();
+					frame.setVisible(true);
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public window_login() {
+		Scanner sc=new Scanner(System.in);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0, 0,500 , 500);
+		JPanel contentPane=new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JDesktopPane desktopPane = new JDesktopPane();
+		desktopPane.setBackground(new Color(240, 255, 255));
+		desktopPane.setBounds(49, 93, 402, 336);
+		contentPane.add(desktopPane);
+		
+		JTextField = new JTextField();
+		
+		JTextField.setBounds(88, 61, 252, 50);
+		desktopPane.add(JTextField);
+		
+		JTextField.setVisible(true);
+		JTextField.setBackground(SystemColor.text);
+		JTextField.setToolTipText("電子信箱/帳號");
+		
+		passwordField_1 = new JPasswordField();
+		passwordField_1.setBounds(88, 121, 252, 50);
+		passwordField_1.setEchoChar('*');
+		desktopPane.add(passwordField_1);
+		passwordField_1.setToolTipText("密碼");
+		
+		JLabel lblNewLabel = new JLabel("帳號");
+		
+		lblNewLabel.setBounds(10, 61, 100, 50);
+		desktopPane.add(lblNewLabel);
+		lblNewLabel.setFont(new Font("新細明體", Font.PLAIN, 20));
+		lblNewLabel.setBackground(new Color(240, 240, 240));
+		lblNewLabel.setForeground(new Color(0, 0, 0));
+		
+		JLabel lblNewLabel_1 = new JLabel("密碼");
+		lblNewLabel_1.setBounds(10, 119, 100, 50);
+		desktopPane.add(lblNewLabel_1);
+		lblNewLabel_1.setForeground(Color.BLACK);
+		lblNewLabel_1.setFont(new Font("新細明體", Font.PLAIN, 20));
+		lblNewLabel_1.setBackground(UIManager.getColor("Button.background"));
+		
+		JButton btnNewButton = new JButton("登入");
+		btnNewButton.setBounds(88, 181, 252, 30);
+		
+		btnNewButton.setFocusPainted(false);
+		btnNewButton.setBackground(new Color(255, 255, 255));
+		btnNewButton.addActionListener(new ActionListener() {
+			int click=0;
+			public void actionPerformed(ActionEvent e) {
+				String a=JTextField.getText();
+				String b=String.valueOf(passwordField_1.getPassword());
+				if(a.equals("321")&&b.equals("123")) {
+					click+=1;
+				}
+				if(click==1) {
+					
+				}
+				window_frontpage newScreen=new window_frontpage();
+				newScreen.jumpScreen1();
+				
+			}
+		});
+		desktopPane.add(btnNewButton);
+		btnNewButton.setForeground(SystemColor.activeCaptionBorder);
+		btnNewButton.setFont(new Font("新細明體", Font.PLAIN, 15));
+		
+		JButton btnNewButton_1 = new JButton("忘記密碼");
+		btnNewButton_1.setBounds(88, 221, 85, 23);
+		desktopPane.add(btnNewButton_1);
+		btnNewButton_1.setBorderPainted(false);
+		btnNewButton_1.setFocusPainted(false);
+		btnNewButton_1.setBackground(new Color(240, 255, 255));
+		btnNewButton_1.setForeground(new Color(192, 192, 192));
+		
+		JButton btnNewButton_2 = new JButton("立即註冊");
+		btnNewButton_2.setBounds(253, 28, 87, 23);
+		desktopPane.add(btnNewButton_2);
+		btnNewButton_2.setBorderPainted(false);
+		btnNewButton_2.setFocusPainted(false);
+		btnNewButton_2.setForeground(new Color(192, 192, 192));
+		btnNewButton_2.setBackground(new Color(240, 255, 255));
+		
+		JLabel lblNewLabel_2 = new JLabel("登入");
+		lblNewLabel_2.setBounds(98, 13, 75, 38);
+		desktopPane.add(lblNewLabel_2);
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel_2.setFont(new Font("新細明體", Font.BOLD, 26));
+		lblNewLabel_2.setForeground(Color.BLACK);
+		
+		JButton btnNewButton_3 = new JButton("首頁");
+		btnNewButton_3.setFont(new Font("新細明體", Font.PLAIN, 20));
+		btnNewButton_3.setBorderPainted(false);
+		btnNewButton_3.setFocusPainted(false);
+		btnNewButton_3.setBackground(new Color(255, 255, 255));
+		btnNewButton_3.setBounds(10, 0, 79, 46);
+		contentPane.add(btnNewButton_3);
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				window_frontpage newScreen=new window_frontpage();
+				newScreen.jumpScreen1();
+			}
+		});
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+	}
+}
