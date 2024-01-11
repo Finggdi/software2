@@ -1,0 +1,60 @@
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.border.EmptyBorder;
+
+public class window_point extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void jumpScreen9() {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					window_point frame = new window_point();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public window_point() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(50, 100, 1300, 800);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		ImageIcon image01=new ImageIcon("Image/Group 63.png");
+		
+		contentPane.setLayout(null);
+		
+		
+		JScrollPane scrollPane = new JScrollPane();
+		
+		scrollPane.setBounds(0, -50, 1500,1000 );
+		scrollPane.setLayout(null);
+		JLabel lblNewLabel = new JLabel(image01);
+		lblNewLabel.setBounds(-100,0,1500,800);
+		scrollPane.add(lblNewLabel);
+		
+		contentPane.add(scrollPane);
+		
+	}
+
+}
